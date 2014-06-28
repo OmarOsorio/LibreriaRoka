@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+#datosClient input{
+	/*border: 1px solid #c4c4c4;*/
+	border: 3px solid #0011DD;
+	margin: 10px;
+	width: 510px;
+	border-collapse: separate;
+	border-spacing: 30000px;
+	display: block;
+	text-align: center;
+	background-color: #D0D0DA; 
+}
+
+#datosClient legend{
+	text-align: center ;
+	width: 50%;
+
+}
+
+#agregarProductoContainer input{
+	text-align: center ;
+	border: 3px solid #0011DD;
+	background-color: #D0D0DA; 
+
+}
+
+# input{
+	text-align: center ;
+	border: 3px solid #0011DD;
+	background-color: #D0D0DA; 
+
+}
+
+
+
+
+#datosClient legend{
+	padding: 3px ;
+	color: #0011DD; 
+	font-weight: bold;
+
+}
+
+}
+
+
+#datosClient fieldset{
+		text-align: center;
+	width: 10%;
+
+}
+
+
+#agregarProductoForm :type["number"]{
+	width: 24px;
+}
+
+#detallesVentaContainer{
+	margin-top: 30px;
+}
+
+#detallesVentaTable{
+	margin-top: 26px;
+}
+
+#detallesVentaTable th, #detallesVentaTable td{
+	border: 3px solid #0011DD;
+	background-color: #D0D0DA; 
+
+}

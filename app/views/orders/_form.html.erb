@@ -1,0 +1,53 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :employee_id %><br>
+    <%= f.number_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br>
+    <%= f.number_field :client_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fechaPedido %><br>
+    <%= f.datetime_select :fechaPedido %>
+  </div>
+  <div class="field">
+    <%= f.label :fechaParaEntregar %><br>
+    <%= f.datetime_select :fechaParaEntregar %>
+  </div>
+  <div class="field">
+    <%= f.label :fechaEntrega %><br>
+    <%= f.datetime_select :fechaEntrega %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :cancelado %><br>
+    <%= f.check_box :cancelado %>
+  </div>
+  <div class="field">
+    <%= f.label :en_espera %><br>
+    <%= f.check_box :en_espera %>
+  </div>
+  <div class="field">
+    <%= f.label :entregado %><br>
+    <%= f.check_box :entregado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

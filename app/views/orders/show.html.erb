@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @order.employee_id %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @order.client_id %>
+</p>
+
+<p>
+  <strong>Fechapedido:</strong>
+  <%= @order.fechaPedido %>
+</p>
+
+<p>
+  <strong>Fechaparaentregar:</strong>
+  <%= @order.fechaParaEntregar %>
+</p>
+
+<p>
+  <strong>Fechaentrega:</strong>
+  <%= @order.fechaEntrega %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @order.direccion %>
+</p>
+
+<p>
+  <strong>Cancelado:</strong>
+  <%= @order.cancelado %>
+</p>
+
+<p>
+  <strong>En espera:</strong>
+  <%= @order.en_espera %>
+</p>
+
+<p>
+  <strong>Entregado:</strong>
+  <%= @order.entregado %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

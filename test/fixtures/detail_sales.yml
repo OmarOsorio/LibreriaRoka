@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sale_id: 1
+  book_id: 1
+  cantidad: 1
+  precio: 9.99
+  descuento: 1
+  total: 9.99
+
+two:
+  sale_id: 1
+  book_id: 1
+  cantidad: 1
+  precio: 9.99
+  descuento: 1
+  total: 9.99

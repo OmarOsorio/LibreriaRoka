@@ -1,0 +1,84 @@
+<%= form_for(@sale) do |f| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "error")%> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% @sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="datosClient">
+   <fieldset>
+   <legend >  Datos del cliente</legend>
+    <%= f.text_field :client_id %>
+
+   <%= fields_for @sale.client do |c| %>
+    <%= c.hidden_field :id %>
+
+    <%= c.text_field :nombre, :placeholder => "Nombre del cliente" %>
+      <%= c.text_field :direccion, :placeholder => "Domicilio" %>
+      <%= c.text_field :email, :placeholder => "Email del cliente" %>
+      <%= c.text_field :telefono, :placeholder => "Teléfono del cliente" %>
+    <% end %>
+   </fieldset>
+</div>
+
+<div id="detallesVentaContainer">
+    <di id="agregarProductoContainer">
+      <input type="text" name="clavelibro" id="clavelibro" placeholder="Clave del libro a agregar"/>
+
+      <input type="number" name="cantidadlibro" id="cantidadlibro" placeholder="Cantidad" value="0">
+
+      <input type="number" name="descuentolibro" id="descuentolibro" value="0" onkeypress="validaNumeros()" min="0" max="20" maxlength="2" >
+
+    </div>
+
+    <%# Crear la tabla donde agregaremos los productos %>
+
+  <table id="detallesVentaTable" cellspacing="0">
+    <thead>
+      <th>Isbn</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Descuento</th>
+      <th>Importe</th> 
+
+    </thead>
+    <tbody>
+      <% @sale.detailSales.each do |item| %>
+        <%= f.fields_for :detailSales, item do |d| %>
+          <tr>
+            <td><%= d.text_field :book_id, :class =>"idLibroVender", :readonly => "readonly" %></td>
+            <td><input type="text" id="nombreProducto" value="" readonly="readonly"></td>
+            <td><%= d.text_field :precio, :class => "precioLibro",:readonly => "readonly" %></td>
+            <td><%= d.text_field :cantidad, :class =>"cantidadVender", :readonly => "readonly" %></td>
+            <td><%= d.text_field :descuento, :class =>"descuentoProducto",:readonly => "readonly"   %></td>
+            <td><%= d.text_field :total, :class =>"importeProducto", :readonly => "readonly"  %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <th colspan="2">Total de artículos:</th>
+      <th id="totalArts">0</th>
+      <th>Importe total:</th>
+      <th id="importeTotalVenta">0</th>
+    </tfoot>
+  </table>
+</div>
+<div class="field">
+    <%= f.label :fecha_venta %><br>
+    <%= f.datetime_select :fecha_venta %>
+  </div>
+
+  <div class="actions">
+    <%#= f.submit %>
+    <button name="guardarventa" id="guardarventa" type="button">Registrar venta</button>>
+  </div>
+  <% end %>
+ 

@@ -1,0 +1,29 @@
+<h1>Listing detail_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Book</th>
+      <th>Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detail_orders.each do |detail_order| %>
+      <tr>
+        <td><%= detail_order.order_id %></td>
+        <td><%= detail_order.book_id %></td>
+        <td><%= detail_order.cantidad %></td>
+        <td><%= link_to 'Show', detail_order %></td>
+        <td><%= link_to 'Edit', edit_detail_order_path(detail_order) %></td>
+        <td><%= link_to 'Destroy', detail_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detail order', new_detail_order_path %>

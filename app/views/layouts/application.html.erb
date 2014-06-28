@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LibreriaVirtualRoka</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<span><%= link_to 'Ventas', sales_path%></span>
+  <span><%= link_to 'Clientes', clients_path%></span>
+  <span><%= link_to 'Libros', books_path%></span>
+
+
+<%= yield %>
+
+</body>
+</html>
