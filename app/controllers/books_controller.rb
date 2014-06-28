@@ -3,6 +3,7 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
+  #Omar Osorio Osorio
   def index
     @books = Book.all
   end
